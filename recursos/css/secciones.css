@@ -1,0 +1,113 @@
+/* Encabezado */
+.encabezado { position: sticky; top: 0; z-index: 10; background: var(--fondo); border-bottom: 1px solid var(--linea); }
+.encabezado-fila { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1.5rem; }
+.logo img { height: 2.5rem; width: auto; }
+.menu { display: flex; align-items: center; gap: clamp(.9rem, 2vw, 1.75rem); }
+.menu a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; white-space: nowrap; }
+.menu a:hover { text-decoration: underline; text-underline-offset: .3em; }
+.boton-menu { display: none; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .25rem .75rem; border: 2px solid var(--tinta); border-radius: 8px; background: none; color: var(--tinta); font-weight: 700; }
+
+/* Portada */
+.portada { background: var(--amarillo); }
+.portada-fila { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: end; padding-top: clamp(2.5rem, 5vw, 4.5rem); }
+.portada-texto { align-self: center; padding-bottom: clamp(3rem, 7vw, 6rem); }
+.portada .bajada { margin-top: 1.4rem; }
+.portada p, .descarga p { color: var(--texto); }
+.acciones { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.75rem; margin-top: 2rem; }
+.portada-marca { width: 100%; }
+
+.portada-marca, .descarga-marca { margin-bottom: -1px; }
+h2 + .bajada { margin-top: 1.1rem; }
+/* Tipos de reporte */
+.tipos { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.75rem, 4vw, 3.5rem); margin-top: 3rem; }
+.marcador { width: 6rem; margin-bottom: 1.25rem; }
+.tipo.perdida h3 { color: var(--perdida); }
+.tipo.hallazgo h3 { color: var(--hallazgo); }
+.tipo.avistamiento h3 { color: var(--avistamiento); }
+.pregunta { font-weight: 700; }
+
+/* Pasos: cada número vive en una casa */
+.pasos { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: 3rem; counter-reset: paso; }
+.pasos li { counter-increment: paso; }
+.pasos li::before { content: counter(paso); display: grid; place-items: end center; width: 3.5rem; height: 4rem; padding-bottom: .45rem; margin-bottom: 1.1rem; background: var(--tinta); color: #fff; font: 800 1.6rem/1.2 var(--titulos); clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0 100%); }
+
+/* Coincidencia */
+.coincidencia { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.total { margin-top: 1.75rem; font-size: 1.2rem; }
+.total strong { display: inline-block; margin-right: .3rem; font: 800 clamp(3.5rem, 8vw, 6rem)/1 var(--titulos); color: var(--amarillo); }
+.barras { margin: 0; display: grid; gap: 1.15rem; }
+.barras div { display: grid; grid-template-columns: 6.5rem 1fr; align-items: center; gap: 1rem; }
+.barras dd { margin: 0; display: grid; grid-template-columns: 1fr 6.2rem; align-items: center; gap: 1rem; }
+.barras b { text-align: right; }
+.barra { height: .9rem; background: #3A4690; }
+.barra i { display: block; height: 100%; background: var(--amarillo); }
+
+/* Pantallas */
+.pantallas { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.pestanas { margin-top: 2rem; display: grid; gap: .35rem; }
+.pestanas button { text-align: left; padding: .9rem 1.2rem; border: 0; border-radius: 8px; background: none; }
+.pestanas b { display: block; font: 700 1.25rem/1.3 var(--titulos); color: var(--tinta); }
+.pestanas span { color: var(--suave); }
+.pestanas button:hover { background: #EBEEFA; }
+.pestanas [aria-selected=true] { background: var(--amarillo); }
+.pestanas [aria-selected=true] span { color: var(--texto); }
+.telefono { justify-self: center; width: min(100%, 20.5rem); border-radius: 2rem; }
+.telefono img { width: 100%; }
+
+/* Privacidad */
+.privacidad { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(2rem, 6vw, 5rem); }
+.privacidad ul { display: grid; grid-template-columns: 1fr 1fr; gap: 2.25rem 2.5rem; }
+.privacidad li { display: flex; gap: 1rem; min-width: 0; }
+.privacidad li > div { min-width: 0; }
+
+/* Preguntas */
+.preguntas { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(2rem, 6vw, 5rem); }
+.preguntas details { border-bottom: 1px solid var(--linea); }
+.preguntas details:first-child { border-top: 1px solid var(--linea); }
+.preguntas summary { padding: 1.1rem 0; font-weight: 700; color: var(--tinta); cursor: pointer; }
+.preguntas details p { margin: 0 0 1.2rem; }
+
+/* Descarga y cuenta */
+.descarga { background: var(--amarillo); }
+.descarga-fila { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: end; padding-top: clamp(3rem, 6vw, 5rem); }
+.descarga-fila > div { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.descarga .boton { margin-top: 1.75rem; }
+.descarga-marca { width: min(100%, 20rem); justify-self: end; }
+.cuenta { padding-block: 3rem; }
+.cuenta h2 { font-size: 1.6rem; letter-spacing: 0; }
+.cuenta-fila { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
+
+/* Pie */
+.pie { background: var(--tinta); color: #fff; padding-block: 3rem; }
+.pie ul { display: flex; flex-wrap: wrap; gap: .25rem 2rem; margin-block: 1.5rem 1rem; }
+.pie button { min-height: 2.75rem; padding: 0; border: 0; background: none; color: #fff; text-decoration: underline; text-underline-offset: .25em; }
+.pie p { color: var(--celeste); }
+
+@media (max-width: 60rem) {
+  .boton-menu { display: inline-flex; }
+  .menu { display: none; position: absolute; inset: 100% 0 auto; max-height: calc(100vh - 4.5rem); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 0; padding: .5rem 1.25rem 1.25rem; background: var(--fondo); border-bottom: 1px solid var(--linea); }
+  .menu a { min-height: 3.25rem; }
+  .menu .boton { margin-top: .5rem; }
+  .abierto .menu { display: flex; }
+  .pasos, .privacidad ul { grid-template-columns: 1fr 1fr; }
+  .coincidencia, .privacidad, .preguntas { grid-template-columns: 1fr; }
+}
+@media (max-width: 44rem) {
+  .portada-fila, .tipos, .pantallas, .privacidad ul { grid-template-columns: 1fr; }
+  .portada-texto { padding-bottom: 0; }
+  .portada-marca { width: min(78%, 20rem); justify-self: end; }
+  .tipo { display: grid; grid-template-columns: 4.5rem 1fr; column-gap: 1.1rem; }
+  .tipo > * { grid-column: 2; }
+  .marcador { grid-column: 1; grid-row: 1 / span 4; width: 4.5rem; }
+  .telefono { width: min(100%, 17rem); }
+  .descarga-marca { width: 100%; }
+}
+@media (max-width: 30rem) {
+  .pasos { grid-template-columns: 1fr; }
+  .pasos li { display: grid; grid-template-columns: 3.5rem 1fr; column-gap: 1.1rem; }
+  .pasos li::before { grid-row: 1 / span 2; margin: 0; }
+  .barras div { grid-template-columns: 1fr; gap: .25rem; }
+  .descarga-fila { grid-template-columns: 1fr; }
+  .descarga-fila > div { padding-bottom: 0; }
+  .descarga-marca { width: 60%; }
+}

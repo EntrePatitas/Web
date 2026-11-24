@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EntrePatitas | Perros y gatos perdidos y encontrados en San Fernando</title>
+  <meta name="description" content="Aplicación para Android que reúne reportes de perros y gatos perdidos, encontrados y vistos en San Fernando, y compara sus características.">
+  <meta name="theme-color" content="#F7F8FD">
+  <link rel="icon" href="recursos/img/icono.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="recursos/css/base.css">
+  <link rel="stylesheet" href="recursos/css/secciones.css">
+
+  <!-- Espacio de nombres común. Se usan scripts clásicos para que la página
+       también se pueda abrir con doble clic, sin servidor. -->
+  <script>window.EP = { modelos: {}, vistas: {}, controladores: {} };</script>
+
+  <!-- Modelos -->
+  <script defer src="app/modelos/sitio.js"></script>
+  <script defer src="app/modelos/reportes.js"></script>
+  <script defer src="app/modelos/coincidencia.js"></script>
+  <script defer src="app/modelos/pantallas.js"></script>
+  <script defer src="app/modelos/preguntas.js"></script>
+
+  <!-- Vistas -->
+  <script defer src="app/vistas/iconos.js"></script>
+  <script defer src="app/vistas/encabezado.js"></script>
+  <script defer src="app/vistas/portada.js"></script>
+  <script defer src="app/vistas/reportes.js"></script>
+  <script defer src="app/vistas/pasos.js"></script>
+  <script defer src="app/vistas/coincidencia.js"></script>
+  <script defer src="app/vistas/pantallas.js"></script>
+  <script defer src="app/vistas/privacidad.js"></script>
+  <script defer src="app/vistas/preguntas.js"></script>
+  <script defer src="app/vistas/descarga.js"></script>
+  <script defer src="app/vistas/pie.js"></script>
+  <script defer src="app/vistas/aviso.js"></script>
+
+  <!-- Controladores -->
+  <script defer src="app/controladores/menu.js"></script>
+  <script defer src="app/controladores/pantallas.js"></script>
+  <script defer src="app/controladores/acciones.js"></script>
+  <script defer src="app/controladores/pagina.js"></script>
+  <script defer src="app/principal.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+  <header id="encabezado" class="encabezado"></header>
+  <main id="contenido" tabindex="-1"></main>
+  <footer id="pie" class="pie"></footer>
+  <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+  <noscript>
+    <div class="ancho sin-js">
+      <h1>EntrePatitas</h1>
+      <p>Perros y gatos perdidos y encontrados en San Fernando. Activa JavaScript para ver la página completa.</p>
+    </div>
+  </noscript>
+</body>
+</html>

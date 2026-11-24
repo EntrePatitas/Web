@@ -1,0 +1,54 @@
+/* Identidad EntrePatitas: colores, tipografía y elementos comunes. */
+@font-face { font-family: Archivo; font-weight: 700; font-display: swap; src: url(../fuentes/archivo-700.woff2) format("woff2"); }
+@font-face { font-family: Archivo; font-weight: 800; font-display: swap; src: url(../fuentes/archivo-800.woff2) format("woff2"); }
+@font-face { font-family: "Atkinson Hyperlegible"; font-weight: 400; font-display: swap; src: url(../fuentes/atkinson-hyperlegible-400.woff2) format("woff2"); }
+@font-face { font-family: "Atkinson Hyperlegible"; font-weight: 700; font-display: swap; src: url(../fuentes/atkinson-hyperlegible-700.woff2) format("woff2"); }
+
+:root {
+  --tinta: #1F2A6B; --amarillo: #FFCB2E; --celeste: #DDE3F7; --fondo: #F7F8FD; --texto: #141A3D;
+  --suave: #545B7C; --linea: #C9CFE6; --perdida: #C2371F; --hallazgo: #0A7350; --avistamiento: #5A45B8;
+  --titulos: Archivo, "Arial Black", Arial, sans-serif;
+  --cuerpo: "Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body { margin: 0; background: var(--fondo); color: var(--texto); font: 1.125rem/1.55 var(--cuerpo); }
+h1, h2, h3 { font-family: var(--titulos); color: var(--tinta); margin: 0; text-wrap: balance; overflow-wrap: break-word; }
+h1 { font-weight: 800; font-size: clamp(2.6rem, 6.4vw, 5.25rem); line-height: 1; letter-spacing: -.02em; }
+h2 { font-weight: 800; font-size: clamp(2rem, 4.2vw, 3.25rem); line-height: 1.06; letter-spacing: -.015em; }
+h3 { font-weight: 700; font-size: 1.4rem; line-height: 1.2; }
+p { margin: .6rem 0 0; max-width: 62ch; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: var(--tinta); }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+main:focus { outline: none; }
+.oscura :focus-visible, .pie :focus-visible { outline-color: var(--amarillo); }
+
+.ancho { width: min(100% - 2.5rem, 74rem); margin-inline: auto; }
+.seccion { padding-block: clamp(4rem, 9vw, 7.5rem); }
+.celeste { background: var(--celeste); }
+.oscura { background: var(--tinta); color: #fff; }
+.oscura h2 { color: #fff; }
+.bajada { font-size: 1.3rem; line-height: 1.4; max-width: 34ch; }
+.icono { width: 1.75rem; height: 1.75rem; flex: none; color: var(--tinta); }
+.cuerpo { fill: var(--tinta); }
+.puerta { fill: var(--fondo); }
+
+.boton { min-height: 3.25rem; padding: .7rem 1.5rem; border: 2px solid var(--tinta); border-radius: 8px; background: var(--tinta); color: #fff; font-weight: 700; }
+.boton:hover { background: #141C4D; border-color: #141C4D; }
+.boton.chico { min-height: 2.75rem; padding: .4rem 1.1rem; }
+.boton.contorno { background: transparent; color: var(--tinta); }
+.boton.contorno:hover { background: var(--celeste); border-color: var(--tinta); }
+.enlace { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 700; text-underline-offset: .25em; }
+.saltar { position: fixed; z-index: 20; left: 1rem; top: -6rem; padding: .8rem 1.2rem; background: var(--tinta); color: #fff; border-radius: 8px; }
+.saltar:focus { top: 1rem; }
+.sin-js { padding-block: 4rem; }
+
+.aviso { position: fixed; z-index: 15; left: 50%; bottom: 1.25rem; width: max-content; max-width: calc(100% - 2.5rem); padding: .9rem 1.3rem; border-radius: 8px; background: var(--texto); color: #fff; border: 2px solid var(--amarillo); transform: translate(-50%, 200%); visibility: hidden; transition: transform .25s, visibility .25s; }
+.aviso.visible { transform: translate(-50%, 0); visibility: visible; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .aviso { transition: none; } }
